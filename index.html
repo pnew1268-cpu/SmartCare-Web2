@@ -1,16 +1,128 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>frontend</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MedRecord - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <span>MedRecord</span>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span>Patients</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-calendar-check"></i>
+                    <span>Appointments</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-file-medical"></i>
+                    <span>Records</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+            <div class="user-profile">
+                <div class="avatar">DR</div>
+                <div class="user-info">
+                    <span class="user-name">Dr. Smith</span>
+                    <span class="user-role">Cardiologist</span>
+                </div>
+            </div>
+        </aside>
 
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="top-header">
+                <div class="search-bar">
+                    <i class="fa-solid fa-search"></i>
+                    <input type="text" placeholder="Search patients, records...">
+                </div>
+                <div class="header-actions">
+                    <button class="icon-btn">
+                        <i class="fa-regular fa-bell"></i>
+                        <span class="badge">3</span>
+                    </button>
+                    <button class="btn primary-btn">+ New Patient</button>
+                </div>
+            </header>
+
+            <div class="dashboard-content">
+                <h1 class="page-title">Overview</h1>
+                
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Total Patients</h3>
+                            <p class="stat-number">1,248</p>
+                            <span class="stat-trend positive"><i class="fa-solid fa-arrow-up"></i> 12%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-calendar-day"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Today's Appts</h3>
+                            <p class="stat-number">24</p>
+                            <span class="stat-trend positive"><i class="fa-solid fa-arrow-up"></i> 4%</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-file-prescription"></i>
+                        </div>
+                        <div class="stat-details">
+                            <h3>Prescriptions</h3>
+                            <p class="stat-number">156</p>
+                            <span class="stat-trend negative"><i class="fa-solid fa-arrow-down"></i> 2%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid">
+                    <div class="recent-patients card">
+                        <div class="card-header">
+                            <h2>Recent Patients</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="patient-list" id="patientList">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+
+                    <div class="upcoming-appointments card">
+                        <div class="card-header">
+                            <h2>Upcoming Schedule</h2>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="appointment-list" id="appointmentList">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
 </html>
